@@ -5,10 +5,14 @@
  var mongoose = require('mongoose');
 
  var teamSchema = mongoose.Schema({
-     teamName:{
+     name:{
          type: String,
          required:true
      },
+    members:{
+        type: Array,
+        required: true
+    },
      points:{
         type: Number,
         required: true
