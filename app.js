@@ -21,10 +21,12 @@
 mongoose.connect('mongodb://localhost/aquaura');
 var db = mongoose.connection;
 
+var html;
 // routes
 
 app.get('/',function(req,res) {
-    res.send('<h1> Aquaura API </h1> <br> <a href="/api/events">Events</a>');
+    var html = pug.renderFile('./views/index.pug');
+    res.send(html);
 })
 
 // route: /api/events
